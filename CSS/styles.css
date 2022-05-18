@@ -1,0 +1,97 @@
+/*-  Fuentes a utilizar */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@font-face {
+    font-family: pixeled;
+    src: url(../Pixeled.ttf) format('truetype');
+}
+
+/*- variables  */
+:root {
+    --Color-primary: blue;
+    --color-title: white;
+    --aling-title: left;
+    --padding-cont: 100px 0;
+    --width-cont: 90%;
+    --max-width-cont: 1200px;
+    --color-btn: rgb(41, 4, 68);
+    --text-btn: white;
+    --padding-btn: 20px 35px;
+    --height-shape: 18em;
+}
+
+body {
+    font-family: "pixeled";
+    /* font-family: 'Space Mono', monospace; */
+    background-color: #000000;
+    opacity: 1;
+    background-image: linear-gradient(#25003b 0.7000000000000001px, transparent 0.7000000000000001px), linear-gradient(to right, #25003b 0.7000000000000001px, #000000 0.7000000000000001px);
+    background-size: 14px 14px;
+    color: white;
+}
+
+/*- aplicado a contenedores */
+.cont{
+    width: var(--width-cont);
+    max-width: var(--max-width-cont);
+    padding: var(--padding-cont);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* - HEADER HERO(FULLSCREEN) */
+.hero{
+    height: 100vh;
+    min-width: 500px;
+    position: relative;
+    --padding-cont: 0;
+}
+
+/* - agregar contenido en el header */
+/* ? clip-path triangulo  */
+.hero::after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: var(--height-shape);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(41, 4, 68);
+    z-index: -1;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    opacity: .5;
+}
+
+.hero_cont{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3fr 2fr;
+    place-items: center;
+    gap: 20px;
+}
+
+.hero_title{
+    font-size: 4rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero_p{
+    font-size: 1.5rem;
+    margin: 25px 0;
+}
+
+.hero_dsc{
+    display: inline-block;
+    background: var(--color-btn);
+    color: white;
+    padding: var(--padding-btn);
+    text-align: center;
+    text-decoration: none;
+}
+
+.hero_img{
+    width: 600px;
+}
